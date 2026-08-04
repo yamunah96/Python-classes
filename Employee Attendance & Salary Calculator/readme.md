@@ -205,32 +205,6 @@ The application currently validates:
 
 - Number of employees should be greater than zero.
 
-Recommended future validations:
-
-- Employee name should not be empty.
-- Salary per day should be greater than zero.
-- Present days should not be negative.
-- Late days should not be negative.
-- Prevent duplicate employee names.
-
----
-
-## Future Enhancements
-
-- Add complete input validation.
-- Prevent duplicate employee records.
-- Generate monthly payroll reports.
-- Export payroll reports to CSV or Excel.
-- Save employee records in JSON format.
-- Store payroll data in SQLite or MySQL.
-- Search employee payroll by name.
-- Update and delete employee records.
-- Add employee ID generation.
-- Create a menu-driven payroll management system.
-- Develop a graphical user interface using Tkinter or PyQt.
-
----
-
 ## Learning Outcomes
 
 This project demonstrates practical knowledge of:
@@ -243,4 +217,4 @@ This project demonstrates practical knowledge of:
 - Salary and deduction calculations
 - Writing structured and maintainable Python code
 
-Github file link: 
+Github file link: https://github.com/yamunah96/Python-classes/blob/main/Employee%20Attendance%20%26%20Salary%20Calculator/Employee_salary_calculation.py
