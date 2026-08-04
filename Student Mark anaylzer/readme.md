@@ -163,4 +163,6 @@ This project provides practical experience with:
 - Implementing input validation
 - Performing calculations and data analysis
 - Writing clean and modular Python code
+
+video: https://youtu.be/GIc38bCIZxI
 - Creating formatted reports
