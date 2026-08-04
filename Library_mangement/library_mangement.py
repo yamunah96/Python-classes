@@ -50,6 +50,8 @@ while True:
     print("1. Add Book\n2. Borrow Book\n3. Return Book\n4. Search Book\n5. Display Books\n6. Borrowed Book\n7. Exit")
     print(" ")
 
+    # validation i can do in next class of using try and except block to handle the invalid input from user
+    
     choice= int(input("Enter Your Choice: "))
     # check the user choice and perform the corresponding action
     if choice == 1:
@@ -106,15 +108,16 @@ while True:
     elif choice == 3:
         print("Kindly Enter below details to return a book")
         book_name= input("Enter the name of the book: ").lower().strip()
+        name= input("Enter your name: ").lower().strip()
         print(" ")
         if book_name in books_data:
             # check the book status is unavailable or not, if unavailable then return the book to library and update the status to available
-            if books_data[book_name]["status"] == "unavailable":
-                name= input("Enter your name: ").lower().strip()
+            if books_data[book_name]["status"] == "unavailable" and borrowed_data[book_name]["borrower_name"]==name:
+                borrowed_data.pop(book_name)
                 print(f"{name} is returned {book_name} sussefully\nThanks For visting !!")
                 books_data[book_name]["status"]= "available"
             else:
-                print(f"the book is not issued to you, kindly return correct book ")
+                print(f"Sorry the book is not issued to you, kindly return correct book ")
         else:
             print(f"Kindly return correct book name")
 
@@ -156,13 +159,17 @@ while True:
             print(f"Author :{data["author"]}")
             print(f"About: {data['description']}")
             print(f"Status: ",data["status"])
+    #I have added additional menu to check borrowed books
     elif choice ==6:
         print("Borrowed Books:")
         # display the details of all the borrowed books in the library
-        for book_name, borrower_info in borrowed_data.items():
-            print(f"Book: {book_name}, Borrower: {borrower_info['borrower_name']}")
+        if borrowed_data=={}:
+            print("No books are borrowed yet.")
+        else:
+            for book_name, borrower_info in borrowed_data.items():
+                print(f"Book: {book_name}, Borrower: {borrower_info['borrower_name']}")
     elif choice ==7:
-        #exit the program
+        # Exit the program
         print("Thanks Visiting the Library,Enjoy your reading")
         break
     else:
