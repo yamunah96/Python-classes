@@ -197,5 +197,3 @@ Possible enhancements include:
 - Fine calculation for late returns
 - User authentication
 - Graphical User Interface (GUI)
-
-\
