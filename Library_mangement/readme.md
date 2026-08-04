@@ -191,6 +191,8 @@ Possible enhancements include:
 - Using functions for cleaner code
 - Implementing object-oriented programming (OOP)
 - Adding file handling to save data permanently
+
+Watch on: https://youtu.be/1sbCF2SBDWw
 - Using JSON or a database for storage
 - Adding book IDs
 - Tracking borrow and return dates
