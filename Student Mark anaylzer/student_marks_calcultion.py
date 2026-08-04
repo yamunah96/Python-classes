@@ -1,12 +1,6 @@
 # student_data
 
-student_data={
-    "yamuna":{
-        "total":78,
-        "percentage":56,
-        "grade":"B"
-    }
-}
+student_data={}
 #  no of students
 no_of_students=int(input("Enter the number of students: "))
 
@@ -61,7 +55,7 @@ for i in range(no_of_students):
     total=0
     for mark in marks:
         total+=mark
-    percentage= total/(len(marks)*100)*100
+    percentage= total/5
     grade=''
     if percentage>90:
         grade='A'
@@ -103,6 +97,10 @@ for student,data in student_data.items():
 print("="*50)
 print("The final Report")
 print("="*50)
+print("All student details:")
+for student,data in student_data.items():
+    print(f"{student}: Total Marks: {data['total']}, Percentage: {data['percentage']}%, Grade: {data['grade']}")
+
 print(f"Highest Scorer: {highest_scorer} with score {highest_score}")
 print(f"Lowest Scorer: {lowest_scorer} with score {lowest_score}")
 print(f"Average Percentage of the class: {(total_percentage/no_of_students):.2f}%")
