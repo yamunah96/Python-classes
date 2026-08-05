@@ -1,16 +1,14 @@
 # default taken the accounts details for testing purpose
-# accounts={
-#      "yamuna":{
-#           "account_number":'1234',
-#           "balance":5000
-#      },
-#     "shiva":{
-#         "account_number":'4567',
-#         "balance":2000
-#     }
-# }
-
-accounts={}
+accounts={
+     "yamuna":{
+          "account_number":'1234',
+          "balance":5000
+     },
+    "shiva":{
+        "account_number":'4567',
+        "balance":2000
+    }
+}
 
 # random module is used to generate the random account number for the customer
 import random
@@ -19,14 +17,21 @@ print("1. Create Account\n2. Deposit\n3. Withdraw\n4. Check Balance\n5. Transfer
 
 while True:
     # Taking the user input for the options
-    options=int(input("Enter your choice:  "))
+    try:
+        options = int(input("Enter your choice: "))
+    except ValueError:
+        print("Please enter numbers only")
+        continue
+
     if  options==1:
         customer_name=input("Enter your name to create an account: ").lower().strip()
         # validation for the customer name
         if customer_name == " ":
             print("Customer name should not be empty, try again")
+            continue
         if not customer_name.isalpha():
             print("customer name must contain alpha charesters, no digits and special characters..")
+            continue
         # checking the customer name is already exist or not
         if customer_name in accounts:
             print(f"{customer_name} your account is already exits, enter your account number will verfiy")
@@ -40,27 +45,34 @@ while True:
             for i in range(5):
                 # generating the random number between 0 to 9 and adding to the account number
                 account_number+= str(random.randint(0,9))
+                exist=False
                 for name,data in accounts.items():
                     # checking the account number is already exist or not because account number should be unique for each customer
                     if  account_number == data['account_number']:
                         print(f"account number already exist....")
-                        continue
-            print("account number created succesfulyy..")
+                        exist=True
+                        break
+                if exist:
+                    account_number=''
+                    continue
+            print(f"{customer_name} your account created succesfully")
                 
             # store the account details in dict
             accounts[customer_name]={
                 "account_number":account_number,
                 "balance":1000
             }            
-        print(f"{customer_name} your account created succesfully")
+        
         print(accounts)
     elif options==2:
+        found=False
         print("Enter below details to deposit the amount")
         # taking the account number from the user to deposit the amount
         account_number= input("Enter your account number: ").strip()
         for name,data in accounts.items():
             # checking the account number is correct or not
             if account_number == data['account_number']:
+                found=True
                 customer_name= input("Enter your name:  ").lower().strip()
                 while True:
                     amount= float(input("Enter the amount: "))
@@ -70,11 +82,9 @@ while True:
                         msg= f"{customer_name} is deposited {amount} rupees succefully"
                         print(msg)
                         break
-                    else:
-                        print("enter the valid amount")
-            else:
-                print("Incorrect account number Try again..")
-                break
+        if not found:
+            print("Incorrect account number Try again..")
+            break
         print(accounts) 
 
     elif options==3:
@@ -105,13 +115,17 @@ while True:
                 break
         print(accounts) 
     elif options==4:
-    # checking the balance of the customer using the account number
+       found=False
+        # checking the balance of the customer using the account number
        account_number= input("Enter your account number to check balance: ").strip()
        for name,data in accounts.items():
            if account_number == data['account_number']:
                print(f"Current Balance is: {data['balance']} Rupees")
-           else:
-               print("Incorrect account number,Try again")
+               found=True
+               break
+       if not found:
+            print("Incorrect account number Try again..")
+            break
 
     elif options==5:
         print("Enter the below details to transfer the amount ")
