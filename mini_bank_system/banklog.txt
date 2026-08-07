@@ -1,0 +1,13 @@
+07-08-2026 20:28:51:PM | INFO | BankingSystem |Rithu Account created successfully | Account 52019
+07-08-2026 20:29:21:PM | INFO | BankingSystem |Yamuna account is already exists
+07-08-2026 20:29:29:PM | ERROR | BankingSystem |Incorrect account number  Account: 4589
+07-08-2026 20:30:10:PM | ERROR | BankingSystem |Invalid Amount Entered : 1000.0
+07-08-2026 20:30:10:PM | INFO | BankingSystem |Deposit Successful | Account : 4567 | Amount : 1000.0
+07-08-2026 20:30:45:PM | ERROR | BankingSystem |Invalid Amount Entered : 1000.0
+07-08-2026 20:30:45:PM | ERROR | BankingSystem |Insufficient Balance | Available : 3000.0 | Requested : 1000.0
+07-08-2026 20:30:45:PM | INFO | BankingSystem |Withdraw Successful | Account : 4567 | Amount : 1000.0
+07-08-2026 20:30:48:PM | INFO | BankingSystem |Balance fetched successfully | Account : 4567
+07-08-2026 20:31:00:PM | INFO | BankingSystem |Balance fetched successfully | Account : 4567
+07-08-2026 20:31:35:PM | ERROR | BankingSystem |Invalid Amount Entered : 4000.0
+07-08-2026 20:31:35:PM | ERROR | BankingSystem |Insufficient Balance | Available : 5000 | Requested : 4000.0
+07-08-2026 20:33:11:PM | INFO | BankingSystem |Exit from the menu
