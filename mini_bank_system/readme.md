@@ -205,6 +205,5 @@ python main.py
 Python | Machine Learning | Data Analytics 
 ---
 
-## License
-
-This project is created for educational purposes and learning Core Python through a real-world application.
+## Video link
+https://youtu.be/ivAUPXyHW14
